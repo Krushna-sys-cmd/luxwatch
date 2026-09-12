@@ -16,7 +16,12 @@ function displayAdminProducts() {
 
         adminProducts.innerHTML += `
             <div class="admin-product">
-                <h3>${watch.name}</h3>
+                <img
+                    src="${watch.image}"
+                    width="200"
+                    alt="${watch.name}"
+                >
+                <h3>${watch.name} "</h3>
 
                 <p>Price: ₹${watch.price}</p>
 
@@ -87,17 +92,39 @@ const saveWatchButton = document.getElementById("save-watch-button");
 
 if (saveWatchButton) {
 
-    saveWatchButton.addEventListener("click", function() {
+    saveWatchButton.addEventListener("click", async function() {
 
         const name = document.getElementById("watch-name").value.trim();
         const price = Number(document.getElementById("watch-price").value);
         const stock = Number(document.getElementById("watch-stock").value);
-        const image = document.getElementById("watch-image").value.trim();
+        const imageFile = document.getElementById("watch-image").files[0];
 
-        if (!name || price <= 0 || stock <= 0 || !image) {
+        if (!name || price <= 0 || stock <= 0 || !imageFile) {
             alert("Please fill in all fields correctly.");
             return;
         }
+
+        const formData = new FormData();
+
+        formData.append("image", imageFile);
+
+        const uploadResponse = await fetch(
+            "http://127.0.0.1:5000/upload-watch-image",
+            {
+                method: "POST",
+                credentials: "include",
+                body: formData
+            }
+        );
+
+        const uploadResult = await uploadResponse.json();
+
+        if (!uploadResult.success) {
+            alert(uploadResult.message);
+            return;
+        }
+
+        const image = uploadResult.image;
 
         const newWatch = {
             id: Date.now(),
@@ -143,4 +170,17 @@ if (logoutButton) {
         }
 
     });
+}
+
+const addWatchButton = document.querySelector(".add-watch-button");
+const addWatchForm = document.querySelector(".add-watch-form");
+
+if (addWatchButton && addWatchForm) {
+
+    addWatchButton.addEventListener("click", function() {
+
+        addWatchForm.classList.toggle("show");
+
+    });
+
 }

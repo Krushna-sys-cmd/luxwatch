@@ -30,6 +30,19 @@ const watches = savedWatches || [
     }
 ]
 
+watches.forEach(function(watch) {
+
+    if (watch.image && !watch.image.startsWith("/")) {
+        watch.image = "/" + watch.image;
+    }
+
+});
+
+localStorage.setItem(
+    "watches",
+    JSON.stringify(watches)
+);
+
 const savedStock = JSON.parse(localStorage.getItem("watchStock"));
 
 if (savedStock) {
