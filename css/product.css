@@ -1,0 +1,157 @@
+/* ========================================
+   PRODUCTS SECTION
+======================================== */
+
+.products {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.products h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   PRODUCT GRID
+======================================== */
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* ========================================
+   PRODUCT CARD
+======================================== */
+
+.product {
+    background: rgb(248, 248, 248);
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(5, 5, 5, 0.12);
+    background: #999696;
+}
+
+/* ========================================
+   PRODUCT IMAGE
+======================================== */
+
+.product img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   PRODUCT NAME
+======================================== */
+
+.product h2 {
+    font-size: 20px;
+    margin: 5px 0 10px;
+}
+
+
+/* ========================================
+   PRODUCT PRICE
+======================================== */
+
+.product p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 18px;
+}
+
+
+/* ========================================
+   ADD TO CART BUTTON
+======================================== */
+
+.add-to-cart-button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.add-to-cart-button:hover {
+    background: #333;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ========================================
+   STOCK STATUS
+======================================== */
+
+.stock {
+    font-size: 14px !important;
+    font-weight: normal !important;
+    margin-bottom: 15px !important;
+}
+
+
+/* ========================================
+   DISABLED BUTTON
+======================================== */
+
+.add-to-cart-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ========================================
+   SEARCH BAR
+======================================== */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#search-input:focus {
+    border-color: #111;
+}

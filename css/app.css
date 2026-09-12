@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 30px;
+
+}
+
+.product {
+    background: white;
+    width: 250px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.product img {
+    width: 200px;
+
+}
+
+button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.hover {
+    background: #444;
+}
+
+.button1 {
+    position: relative;
+    text-align: right;
+
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 5%;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+nav ul.hover li a {
+    color: #111;
+    text-decoration: underline;
+}
+nav a {
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+}
+

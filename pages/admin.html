@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LuxWatch Admin</title>
+
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>LUXWATCH</h1>
+        <p>Admin Dashboard</p>
+    </header>
+
+    <main>
+
+        <section class="admin-dashboard">
+
+            <button id="logout-button">Logout</button>
+
+            <h2>Manage Watches</h2>
+
+            <button class="add-watch-button">
+                + Add New Watch
+            </button>
+
+            <div class="add-watch-form">
+
+                <h3>Add New Watch</h3>
+
+                <input
+                    type="text"
+                    id="watch-name"
+                    placeholder="Watch name"
+                >
+
+                <input
+                    type="number"
+                    id="watch-price"
+                    placeholder="Price"
+                    min="1"
+                >
+
+                <input
+                    type="number"
+                    id="watch-stock"
+                    placeholder="Stock"
+                    min="1"
+                >
+
+                <input
+                    type="text"
+                    id="watch-image"
+                    placeholder="Image path, e.g. /assets/watch.jpg"
+                >
+
+                <button id="save-watch-button">
+                    Add Watch
+                </button>
+
+            </div>
+
+            <div id="admin-products">
+
+                <!-- Watches will appear here later -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/product.js"></script>
+    <script src="../js/admin-auth.js"></script>
+    <script src="../js/admin.js"></script>
+
+</body>
+
+</html>
