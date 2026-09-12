@@ -1,5 +1,7 @@
 # LuxWatch
 
+![LuxWatch Store Preview](assets/store-preview.png)
+
 A full-stack e-commerce watch store built with HTML, CSS, JavaScript, and Flask.
 
 ## Features
